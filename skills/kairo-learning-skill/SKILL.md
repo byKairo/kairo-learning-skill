@@ -29,8 +29,6 @@ description: 当用户希望系统学习、继续学习或通过连续提问了�
 保存或恢复：读取 [档案规则](references/persistence.md)，使用 [档案模板](assets/learning-record.md)。
 更新、升级、重新安装 kairo-learning 或本 Skill：读取 [更新规则](references/update.md)，优先覆盖安装，不先卸载，不删除学习档案。
 解释方法依据或选择方法：读取 [方法与证据](references/methods.md)。
-不读取 evals；它是开发评测材料，不是教学内容。
-
 ## 共同流程
 
 以下为系统学习流程；问答探索执行对应 reference，不强制问诊、出题或测验。

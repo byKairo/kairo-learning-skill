@@ -1,42 +1,19 @@
-# 维护者验证环境
+# 维护与验证
 
-本仓库的 Skill 本体是 Markdown 规则文件，用户安装和使用 kairo-learning 不需要 Python 依赖；`kairo-learning` 是安装器和显式调用使用的稳定 Skill id。
-
-维护者在修改 Skill 后，可运行 Codex `skill-creator` 自带的结构校验脚本：
+运行仓库自带的结构校验器，仅需 Python 3 标准库：
 
 ```bash
-python /Users/dealer/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/kairo-learning-skill
+python3 scripts/validate_skill.py
 ```
 
-该脚本需要 Python 包 `PyYAML` 来读取 `SKILL.md` 的 YAML frontmatter。若当前 Python 环境没有安装该依赖，会出现：
+它检查调用名、界面元数据、资源和相对引用。源码文件夹为 `kairo-learning-skill`，调用名为 `kairo-learning`；两者按项目约定区分。无需其他 Skill，也不依赖维护者电脑上的路径。
 
-```text
-ModuleNotFoundError: No module named 'yaml'
-```
+修改教学规则后，还需用实际对话验证相关行为：首次问诊、单次问答、跳过练习、开放作品反馈、纠错、保存后恢复。结构校验不能证明教学效果。
 
-这只表示结构校验脚本没有启动成功，不表示 Skill 无法安装或运行。
-
-## 推荐设置
-
-不要依赖系统 Python 的全局包。维护者可在仓库根目录创建本地虚拟环境：
+修改安装说明后，在新建的临时目录中验证：
 
 ```bash
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install PyYAML
-python /Users/dealer/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/kairo-learning-skill
+npx -y skills add byKairo/kairo-learning-skill -a codex -y
 ```
 
-`.venv` 是本地维护环境，不应提交到仓库。
-
-## 需要检查什么
-
-每次修改 Skill 规则或引用文件后，至少检查：
-
-- `quick_validate.py skills/kairo-learning-skill` 能通过；
-- Markdown 内部链接指向存在的文件；
-- 新增 reference 已在 `SKILL.md` 中有明确路由；
-- 文档中的安装、更新和卸载说明没有要求用户删除学习库；
-- 若修改了公开安装命令，从干净临时项目实测安装。
-
-若暂时无法安装 `PyYAML`，可以继续做 Markdown 链接和人工 diff 检查，但提交说明或交付记录中应注明 `quick_validate.py` 未运行成功及原因。
+比较安装后的 `SKILL.md`、`agents/`、`references/`、`assets/` 与源目录；用完只清理临时目录。不要用真实学习档案做公开测试，不把 `.env`、本机路径、缓存或个人学习记录提交到仓库。
