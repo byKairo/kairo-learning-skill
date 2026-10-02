@@ -8,7 +8,7 @@
 - 本轮没有运行多轮教学、隔时保持或跨会话恢复行为测试；结构通过不代表学习效果提升。
 
 - 本地候选在隔离项目中通过 Skills CLI 安装，识别为 `kairo-learning`；11 个资源文件与源目录逐文件一致。
-- GitHub 来源的本次安装验证尚未执行，以下历史证据不替代本次结果。
+- 2026-10-02：提交 `6ba4ca9` 从 GitHub 在隔离项目通过 `npx -y skills add byKairo/kairo-learning-skill -a codex -y` 安装；全部 11 个资源文件与源码逐文件一致。此结果仅覆盖项目范围 Codex 安装。
 
 ## 历史证据
 
