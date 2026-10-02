@@ -1,5 +1,12 @@
 # 版本记录
 
+## 2026-10-02
+
+- 仓库改名为 `byKairo/kairo-learning-skill`。
+- 调用名和界面显示名统一为 `kairo-learning`，Skill 文件夹为 `kairo-learning-skill`。
+- 同步安装、更新、卸载命令和文档引用；学习方法与档案规则保留。
+
+
 ## Unreleased
 
 - 统一用户可见名称为 Rogue Learning，稳定 Skill id 为 `rogue-learning`。

@@ -1,12 +1,12 @@
 <div align="center">
 
-# 🧭 Rogue Learning
+# 🧭 kairo-learning
 
 ### 把一次提问，变成真正学会的过程
 
 面向 Codex 及其他 Agent 的自适应学习 Skill。它会查证资料、解释概念、设计练习、根据表现调整难度，并把进度留给下一次对话。
 
-[![Skill](https://img.shields.io/badge/Agent%20Skill-rogue--learning-6f42c1?style=flat-square)](skills/rogue-learning/SKILL.md)
+[![Skill](https://img.shields.io/badge/Agent%20Skill-kairo--learning-6f42c1?style=flat-square)](skills/kairo-learning-skill/SKILL.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2ea44f?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-public%20preview-f59e0b?style=flat-square)](docs/validation.md)
 
@@ -20,11 +20,11 @@
 
 普通 AI 对话很容易停在“解释过了”：回答很完整，用户也看懂了，但换一个情境仍然不会做；下一次打开对话，又要重新交代目标、基础和学到哪里。
 
-Rogue Learning 把学习从一次性回答改成一个连续循环：先判断你现在需要快速理解还是系统学习，再用实际回答和作品判断掌握程度，最后只保存有续学价值的记录。
+kairo-learning 把学习从一次性回答改成一个连续循环：先判断你现在需要快速理解还是系统学习，再用实际回答和作品判断掌握程度，最后只保存有续学价值的记录。
 
 它适合两类时刻：
 
-| 你现在的状态 | Rogue Learning 怎么做 |
+| 你现在的状态 | kairo-learning 怎么做 |
 | --- | --- |
 | 有明确目标，例如“独立写出 SQL 查询” | 了解目标和基础，拆分近期路径，用练习与作品持续校准 |
 | 只是好奇，例如“什么是 token？” | 直接给短解释和例子，沿你的追问继续展开，不强制启动课程 |
@@ -40,24 +40,24 @@ Rogue Learning 把学习从一次性回答改成一个连续循环：先判断�
 | 🧠 | **ICAP 学习活动** | 从被动接收逐步走向主动生成、建构联系和互动推理 |
 | 📈 | **动态调整路径** | 按真实表现增减提示、改变难度或补齐前置知识 |
 | 💾 | **跨会话续学** | 保存目标、进度、误区和下一步，下次从原位置继续 |
-| 🔄 | **对话内更新** | 直接说“更新 rogue skill”，覆盖旧版本并保留学习档案 |
+| 🔄 | **对话内更新** | 直接说“更新 kairo-learning”，覆盖旧版本并保留学习档案 |
 
 ## 🗺️ 它如何工作
 
-![Rogue Learning 的系统学习与问答探索流程](docs/learning-flow.svg)
+![kairo-learning 的系统学习与问答探索流程](docs/learning-flow.svg)
 
 ## 📦 安装
 
 ### 安装到所有支持的 Agent
 
 ```bash
-npx -y skills add KairoRogue/rogue-learning -g --all
+npx -y skills add byKairo/kairo-learning-skill -g --all
 ```
 
 ### 只安装到 Codex
 
 ```bash
-npx -y skills add KairoRogue/rogue-learning -g -a codex -y
+npx -y skills add byKairo/kairo-learning-skill -g -a codex -y
 ```
 
 安装前需要准备：
@@ -75,7 +75,7 @@ npx -y skills add KairoRogue/rogue-learning -g -a codex -y
 ### 系统学习一个主题
 
 ```text
-使用 $rogue-learning，带我学习 SQL。
+使用 $kairo-learning，带我学习 SQL。
 我的目标是能够独立查询业务数据，每天可以学习 30 分钟。
 ```
 
@@ -88,23 +88,23 @@ npx -y skills add KairoRogue/rogue-learning -g -a codex -y
 ### 用图示帮助理解
 
 ```text
-使用 $rogue-learning，用流程图解释循环什么时候继续、什么时候停止。
+使用 $kairo-learning，用流程图解释循环什么时候继续、什么时候停止。
 ```
 
 ### 针对作品获得反馈
 
 ```text
-使用 $rogue-learning，检查这篇给初学者看的文章。
+使用 $kairo-learning，检查这篇给初学者看的文章。
 请根据结构、表达和可读性告诉我下一步先改什么。
 ```
 
 ### 继续上次学习
 
 ```text
-使用 $rogue-learning，继续上次学习。
+使用 $kairo-learning，继续上次学习。
 ```
 
-其他 Agent 的显式调用语法可能不同。无法使用 `$rogue-learning` 时，也可以直接说“使用 Rogue Learning”。更多完整对话见 [使用教程](docs/getting-started.md) 和 [对话示例](examples/conversations.md)。
+其他 Agent 的显式调用语法可能不同。无法使用 `$kairo-learning` 时，也可以直接说“使用 kairo-learning”。更多完整对话见 [使用教程](docs/getting-started.md) 和 [对话示例](examples/conversations.md)。
 
 ## 🧠 学习方法
 
@@ -120,7 +120,7 @@ Skill 会按任务选择合适的方法，不要求每次把所有方法走一�
 | 迁移练习 | 换一个情境应用，判断是否真的会用 |
 | ICAP | 根据学习者的实际产出，在被动、主动、建构和互动参与之间调整活动 |
 
-这些研究支持的是具体学习机制，并不代表本 Skill 的整体效果已经经过实验验证。理论边界与来源见 [方法与证据](skills/rogue-learning/references/methods.md) 和 [ICAP 参与框架](skills/rogue-learning/references/icap.md)。
+这些研究支持的是具体学习机制，并不代表本 Skill 的整体效果已经经过实验验证。理论边界与来源见 [方法与证据](skills/kairo-learning-skill/references/methods.md) 和 [ICAP 参与框架](skills/kairo-learning-skill/references/icap.md)。
 
 ## 💾 学习档案与隐私
 
@@ -137,19 +137,19 @@ Skill 会按任务选择合适的方法，不要求每次把所有方法走一�
 已经安装的用户无需先卸载。在 Codex 或其他支持 Skills 的 Agent 中直接说：
 
 ```text
-更新 rogue skill
+更新 kairo-learning
 ```
 
 也可以手动覆盖安装：
 
 ```bash
-npx -y skills add KairoRogue/rogue-learning -g --all
+npx -y skills add byKairo/kairo-learning-skill -g --all
 ```
 
 只更新 Codex：
 
 ```bash
-npx -y skills add KairoRogue/rogue-learning -g -a codex -y
+npx -y skills add byKairo/kairo-learning-skill -g -a codex -y
 ```
 
 更新只替换 Skill 的规则与资源，不删除独立存放的学习档案。
@@ -159,13 +159,13 @@ npx -y skills add KairoRogue/rogue-learning -g -a codex -y
 移除全局安装：
 
 ```bash
-npx skills remove rogue-learning -g
+npx skills remove kairo-learning -g
 ```
 
 只从 Codex 移除：
 
 ```bash
-npx skills remove rogue-learning -g -a codex
+npx skills remove kairo-learning -g -a codex
 ```
 
 如果当初安装在某个项目中而没有使用 `-g`，请进入该项目目录运行命令，并去掉 `-g`。
@@ -175,8 +175,8 @@ npx skills remove rogue-learning -g -a codex
 ## 📂 仓库结构
 
 ```text
-rogue-learning/
-├── skills/rogue-learning/       # 可安装的 Skill
+kairo-learning-skill/
+├── skills/kairo-learning-skill/       # 可安装的 Skill
 │   ├── SKILL.md                  # 核心规则与模式路由
 │   ├── agents/openai.yaml        # Agent 展示信息
 │   ├── references/               # 教学、检索、ICAP、档案和更新规则
@@ -188,7 +188,7 @@ rogue-learning/
 
 ## 🧪 当前状态
 
-Rogue Learning 目前是公开试用版本。仓库结构、本机入口以及 `npx skills add` 安装流程已经验证；完整多轮教学、跨会话恢复和长期学习效果仍需更多真实使用反馈。示例用于展示交互方式，不构成学习效果证明。
+kairo-learning 目前是公开试用版本。仓库结构、本机入口以及 `npx skills add` 安装流程已经验证；完整多轮教学、跨会话恢复和长期学习效果仍需更多真实使用反馈。示例用于展示交互方式，不构成学习效果证明。
 
 - [查看安装与结构验证](docs/validation.md)
 - [查看维护者验证环境](docs/maintainer-validation.md)

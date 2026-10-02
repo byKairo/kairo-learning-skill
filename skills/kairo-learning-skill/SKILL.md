@@ -1,9 +1,9 @@
 ---
-name: rogue-learning
-description: 当用户希望系统学习、继续学习或通过连续提问了解一个领域，或要求更新 rogue skill、rogue-learning 或 Rogue Learning 时使用。支持目标导向的分步教学，以及简短专业解释、图示和交互辅助的问答探索；检索依据、反馈练习并按需保存进度。单次概念问答直接解释，不启动完整课程。
+name: kairo-learning
+description: 当用户希望系统学习、继续学习或通过连续提问了解一个领域，或要求更新 kairo-learning 时使用。支持目标导向的分步教学，以及简短专业解释、图示和交互辅助的问答探索；检索依据、反馈练习并按需保存进度。单次概念问答直接解释，不启动完整课程。
 ---
 
-# Rogue Learning
+# kairo-learning
 
 把一个学习愿望推进为可独立完成的任务，并以实际表现持续调整教学。适用于不同领域；学习流程通用，知识来源、任务和验收标准必须按领域制定。
 
@@ -27,7 +27,7 @@ description: 当用户希望系统学习、继续学习或通过连续提问了�
 教学、纠错、复习或阶段检验：读取 [教学与检验](references/teaching.md)。
 设计理解活动、改进摘要／复述练习或承接用户推理讨论：读取 [ICAP 参与框架](references/icap.md)，按实际产出调整活动，不强制走完四种模式。
 保存或恢复：读取 [档案规则](references/persistence.md)，使用 [档案模板](assets/learning-record.md)。
-更新、升级、重新安装 rogue skill、rogue-learning、Rogue Learning 或本 Skill：读取 [更新规则](references/update.md)，优先覆盖安装，不先卸载，不删除学习档案。
+更新、升级、重新安装 kairo-learning 或本 Skill：读取 [更新规则](references/update.md)，优先覆盖安装，不先卸载，不删除学习档案。
 解释方法依据或选择方法：读取 [方法与证据](references/methods.md)。
 不读取 evals；它是开发评测材料，不是教学内容。
 

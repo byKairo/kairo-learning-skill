@@ -2,19 +2,19 @@
 
 ## 1. 安装并开始
 
-运行首页安装命令，打开新会话，明确说“使用 rogue-learning”。如果找不到，运行 `npx skills ls -g` 检查是否存在，并检查宿主是否支持 Skills。只有聊天而没有文件访问能力的环境，无法自动维护本地档案。
+运行首页安装命令，打开新会话，明确说“使用 kairo-learning”。如果找不到，运行 `npx skills ls -g` 检查是否存在，并检查宿主是否支持 Skills。只有聊天而没有文件访问能力的环境，无法自动维护本地档案。
 
 ## 2. 选一个起点
 
 有目标时这样说：
 
-> 使用 rogue-learning。我会一点 Excel，想学 SQL，能自己查询订单数据，每周两小时。
+> 使用 kairo-learning。我会一点 Excel，想学 SQL，能自己查询订单数据，每周两小时。
 
 Agent 会利用已有信息，最多先问三个关键问题，再用小任务判断基础。你可以说不知道，也可以纠正路线。
 
 只有好奇时这样说：
 
-> 使用 rogue-learning。什么是循环？先用一个例子讲清楚。
+> 使用 kairo-learning。什么是循环？先用一个例子讲清楚。
 
 这会直接进入问答探索，不先填问卷。想深入就继续问；想系统学，再表达具体目标。
 
@@ -36,7 +36,7 @@ Agent 会利用已有信息，最多先问三个关键问题，再用小任务�
 
 首次持续学习时，Agent 会告诉你实际保存路径。可以指定另一固定目录，默认入口会保存指向它的配置。目录不可写时先解决位置问题，不声称已经保存。
 
-新对话输入“使用 rogue-learning，继续上次 SQL 学习”。Agent 应读索引和该领域摘要，恢复最后位置；待答问题由你选择回答或跳过。
+新对话输入“使用 kairo-learning，继续上次 SQL 学习”。Agent 应读索引和该领域摘要，恢复最后位置；待答问题由你选择回答或跳过。
 
 找不到时提供原目录。不同设备需要能访问同步后的档案，Skill 本身不提供云同步。学习库与安装目录分开，升级 Skill 不应覆盖学习数据。
 
@@ -45,25 +45,25 @@ Agent 会利用已有信息，最多先问三个关键问题，再用小任务�
 更新时不要先卸载。直接在 Codex 或其他支持 Skills 的 Agent 对话框里说：
 
 ```text
-更新 rogue skill
+更新 kairo-learning
 ```
 
 或：
 
 ```text
-更新 rogue-learning skill
+更新 kairo-learning skill
 ```
 
 Agent 应按本 Skill 的更新规则重新运行安装命令覆盖规则资源，并保留学习库。手动更新时，重新运行首页安装命令即可：
 
 ```bash
-npx -y skills add KairoRogue/rogue-learning -g --all
+npx -y skills add byKairo/kairo-learning-skill -g --all
 ```
 
 只更新 Codex：
 
 ```bash
-npx -y skills add KairoRogue/rogue-learning -g -a codex -y
+npx -y skills add byKairo/kairo-learning-skill -g -a codex -y
 ```
 
 如果曾手动修改 Skill 安装目录中的规则文件，更新可能覆盖这些改动；先自行备份或合并。学习库无需搬动。
@@ -71,14 +71,14 @@ npx -y skills add KairoRogue/rogue-learning -g -a codex -y
 卸载可运行：
 
 ```bash
-npx skills remove rogue-learning -g
+npx skills remove kairo-learning -g
 ```
 
-按提示选择宿主。只从 Codex 卸载可以使用 `npx skills remove rogue-learning -g -a codex`。如果原本安装在项目内，进入原项目目录，去掉 `-g` 后执行。完成后运行 `npx skills ls -g` 检查全局入口；项目安装则运行 `npx skills ls`。
+按提示选择宿主。只从 Codex 卸载可以使用 `npx skills remove kairo-learning -g -a codex`。如果原本安装在项目内，进入原项目目录，去掉 `-g` 后执行。完成后运行 `npx skills ls -g` 检查全局入口；项目安装则运行 `npx skills ls`。
 
 **学习档案不会随 Skill 卸载而删除。** 前提是按本项目约定，将学习库放在 Skill 安装目录之外。
 
-仅指定 `-a codex` 时，公共 `.agents/skills/rogue-learning` 入口可能保留，本次项目范围测试观察到了这一行为。若希望完整卸载，去掉 `-a codex` 重新运行卸载命令，并保持原来的全局或项目范围；实测公共入口随之清除，独立学习记录保留。不要手动删除整个 `.agents/skills` 父目录或学习库。
+仅指定 `-a codex` 时，公共 `.agents/skills/kairo-learning-skill` 入口可能保留，本次项目范围测试观察到了这一行为。若希望完整卸载，去掉 `-a codex` 重新运行卸载命令，并保持原来的全局或项目范围；实测公共入口随之清除，独立学习记录保留。不要手动删除整个 `.agents/skills` 父目录或学习库。
 
 | 内容 | 卸载后 |
 | --- | --- |

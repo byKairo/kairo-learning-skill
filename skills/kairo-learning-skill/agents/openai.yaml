@@ -1,0 +1,4 @@
+interface:
+  display_name: "kairo-learning"
+  short_description: "根据学习目标和基础分步教学，通过练习反馈、隔时检验与档案持续调整路径"
+  default_prompt: "使用 $kairo-learning，根据我的目标和基础安排学习，通过练习与复习调整路径并保存进度。"
